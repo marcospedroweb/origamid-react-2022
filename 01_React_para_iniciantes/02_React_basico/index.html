@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React completo</title>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
+  <script type="text/babel" defer>
+    /*
+     [React Element]
+        Todo elemento React é criado com a função createElement. O Babel é o responsável por transformar o elemento criado com JSX (que se parece com HTML) em funções de React.
+    */
+    const Titulo = () => {
+      const numero = Math.random() * 1000;
+      return <h1>Titulo criado com REACT {numero}</h1>
+    }
+    const Button = () => {
+      function hadleClick(event) {
+        alert('Você clicou no botão');
+      }
+      return <button onClick={hadleClick}>Clique aqui</button>
+    }
+
+    /* 
+      [Componentes] 
+        Permitem você dividir a sua interface em pequenos elementos. São criados através de funções que retornam elementos React ou classes que estendem React.Component e possuem o método render retornando um elemento React.
+    */
+    // Function Component
+    const ButtonTeste = () => {
+      return <button>Comprar</button>;
+    };
+
+    // Class Component
+    // class Button extends React.Component {
+    //   render() {
+    //    Essa função é responsável por renderizar o conteudo
+    //     return <button>Comprar</button>;
+    //   }
+    // }
+
+    /*
+      [HOOKS]
+        Utilizamos o React pela facilidade de sincronização do estado. Antes dos Hooks, isso só era possível em componentes criados por meio de classes.
+    */
+
+    const Compras = () => {
+      // useState é um Hook que define uma variável reativa
+      // Desatruturamos o "contador" -> [count, setCount]
+      const [count, setCount] = React.useState(0);
+
+      function comprar() {
+        setCount(count + 1)
+      }
+
+      return (
+        <div>
+          <button onClick={comprar}>Comprar: {count}</button>
+          <p>Total: {count}</p>
+          <p>Preço: R$ {count * 250}</p>
+        </div>
+      );
+    };
+
+    function App() {
+      // Como padrão, coloca-se a primeira letra maiuscula em todo elemento de react
+      return (
+        <div>
+          <Titulo />
+          <Button />
+          <Compras />
+        </div>
+      ) // Aqui está sendo criado um elemento de React
+    }
+
+    /*
+      A função acima é semelhante a
+      // É transformado em:
+      function App() {
+        return React.createElement('div', { id: 'container' }, 'Meu App');
+      }
+    
+    */
+    //Mostrando aonde o React devera ser "renderizado"
+    // ReactDOM.render( [Qual componenente] , [Em qual elemento será renderizado])
+    ReactDOM.render(<App />, document.getElementById('app'))
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>
