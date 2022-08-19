@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import UseState from './UseState';
-import Exercicio from './Exercicio/Exercicio';
-import Professor from './Exercicio/Professor';
+// import Exercicio from './ExUseState/Exercicio';
+// import Professor from './ExUseState/Professor';
+// import UseEffect from './UseEffect';
+// import ExUseEffect from './ExUseEffect/ExUseEffect';
+// import ProfUseEffect from './ExUseEffect/ProfUseEffect';
+// import UseRef from './UseRef';
+import UseMemoCallback from './UseMemoCallback';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +24,12 @@ root.render(
   */
   <React.StrictMode>
     {/* <UseState /> */}
-    <Exercicio />
-    <Professor />
+    {/* <Exercicio /> */}
+    {/* <Professor /> */}
+    {/* <UseEffect /> */}
+    {/* <ExUseEffect />
+    <ProfUseEffect /> */}
+    {/* <UseRef /> */}
+    <UseMemoCallback />
   </React.StrictMode>,
 );
