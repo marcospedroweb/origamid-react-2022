@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import App from './App';
 // import UseState from './UseState';
 // import Exercicio from './ExUseState/Exercicio';
 // import Professor from './ExUseState/Professor';
@@ -7,7 +8,10 @@ import ReactDOM from 'react-dom/client';
 // import ExUseEffect from './ExUseEffect/ExUseEffect';
 // import ProfUseEffect from './ExUseEffect/ProfUseEffect';
 // import UseRef from './UseRef';
-import UseMemoCallback from './UseMemoCallback';
+// import UseMemoCallback from './UseMemoCallback';
+// import UseContext from './UseContext';
+// import AppContext from './ExUseContext/App';
+import CustomHook from './CustomHook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +34,10 @@ root.render(
     {/* <ExUseEffect />
     <ProfUseEffect /> */}
     {/* <UseRef /> */}
-    <UseMemoCallback />
+    {/* <UseMemoCallback /> */}
+    {/* <UseContext /> */}
+    {/* <App /> */}
+    {/* <AppContext /> */}
+    <CustomHook />
   </React.StrictMode>,
 );
