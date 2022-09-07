@@ -21,6 +21,7 @@ const useFetch = () => {
       json = null;
       setError(err.message);
     } finally {
+      // É executa independente do resultado de try/catch
       setData(json);
       setLoading(false);
       return { response, json };

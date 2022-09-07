@@ -19,16 +19,10 @@ const CustomHook = () => {
 
   React.useEffect(() => {
     async function fetchData() {
-      const { response, json } = await request(
-        'https://ranekapi.origamid.dev/json/api/produto/',
-      );
+      await request('https://ranekapi.origamid.dev/json/api/produto/');
     }
     fetchData();
   }, [request]);
-
-  function handleClick({ target }) {
-    setProduto(target.innerText);
-  }
 
   if (error) return <p>{error}</p>;
   else if (loading) return <p>Carregando...</p>;

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import RegrasHook from './RegrasHook';
 // import App from './App';
 // import UseState from './UseState';
 // import Exercicio from './ExUseState/Exercicio';
@@ -11,7 +12,7 @@ import ReactDOM from 'react-dom/client';
 // import UseMemoCallback from './UseMemoCallback';
 // import UseContext from './UseContext';
 // import AppContext from './ExUseContext/App';
-import CustomHook from './CustomHook';
+// import CustomHook from './CustomHook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,6 +39,7 @@ root.render(
     {/* <UseContext /> */}
     {/* <App /> */}
     {/* <AppContext /> */}
-    <CustomHook />
+    {/* <CustomHook /> */}
+    <RegrasHook />
   </React.StrictMode>,
 );

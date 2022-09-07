@@ -2,7 +2,7 @@ import React from 'react';
 
 /* 
   [useEffect]
-    Todo componente possui um ciclo de vida. Os principais momentos acontecem quando o componente é renderizado, atualizado ou destruído. 
+    Todo componente possui um ciclo de vida. Os principais momentos acontecem quando o componente é RENDERIZADO, ATUALIZADO ou DESTRUIDO. 
     Com o React.useEffect() podemos definir um callback que irá ser executado durante certos momentos do ciclo de vida do componente.
 
   [Array de Dependências]
@@ -48,6 +48,7 @@ const UseEffect = () => {
   }, [contar]);
 
   //[Componente Montou]
+  // Ou seja, esse useEffect só sera executado quando o componente for montado
   const [dados, setDados] = React.useState(null);
   React.useEffect(() => {
     // se o fetch estivesse fora do useEffect, toda vez que o componente
@@ -67,6 +68,7 @@ const UseEffect = () => {
     }
     window.addEventListener('scroll', handleScroll);
     //Quando [ativo] sofrer alteração, ou seja, quando o elemento SUMIR da tela, o return é utlizado para fazer algo, nesse caso, remover o evento
+    // Ou seja, pode colocar um callback para quando o elemento sumir da tela, utilizando o return e retornando a função
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
