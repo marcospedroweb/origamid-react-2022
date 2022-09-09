@@ -5,7 +5,7 @@ import React from 'react';
     No React o textarea é utilizado como um input, uma tag única sem abertura/fechamento e com o value para definir o seu valor interno.
 */
 
-const BTextarea = () => {
+const Textarea = () => {
   const [mensagem, setMensagem] = React.useState('');
 
   return (
@@ -21,4 +21,4 @@ const BTextarea = () => {
   );
 };
 
-export default BTextarea;
+export default Textarea;

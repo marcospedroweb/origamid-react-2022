@@ -1,9 +1,9 @@
 import React from 'react';
-import Input from './Form_Componentes/Input';
-import useForm from './Hooks/useForm';
+import Input from '../Form_Componentes/Input';
+import useFormHook from '../Hooks/useFormHook';
 
-const HuseForm = () => {
-  const cep = useForm('cep');
+const useForm = () => {
+  const cep = useFormHook('cep');
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -22,4 +22,4 @@ const HuseForm = () => {
   );
 };
 
-export default HuseForm;
+export default useForm;

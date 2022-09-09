@@ -12,7 +12,7 @@ const types = {
   },
 };
 
-const useForm = (type) => {
+const useFormHook = (type) => {
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(null);
 
@@ -51,4 +51,4 @@ const useForm = (type) => {
   };
 };
 
-export default useForm;
+export default useFormHook;

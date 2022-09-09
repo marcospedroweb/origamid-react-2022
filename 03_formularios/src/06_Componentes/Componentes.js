@@ -1,10 +1,10 @@
 import React from 'react';
-import Checkbox from './Form_Componentes/Checkbox';
-import Input from './Form_Componentes/Input';
-import Radio from './Form_Componentes/Radio';
-import Select from './Form_Componentes/Select';
+import Checkbox from '../Form_Componentes/Checkbox';
+import Input from '../Form_Componentes/Input';
+import Radio from '../Form_Componentes/Radio';
+import Select from '../Form_Componentes/Select';
 
-const FComponentes = () => {
+const Componentes = () => {
   const [nome, setNome] = React.useState('');
   const [produto, setProduto] = React.useState('');
   const [cor, setCor] = React.useState('');
@@ -48,4 +48,4 @@ const FComponentes = () => {
   );
 };
 
-export default FComponentes;
+export default Componentes;

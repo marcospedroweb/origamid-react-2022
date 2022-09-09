@@ -1,0 +1,14 @@
+.titulo,
+.preco {
+  color: #43c;
+}
+
+.preco {
+  font-weight: bold;
+}
+
+.comprar {
+  /* [composes] Herda toda a formatação daquela classe que estamos pegando */
+  composes: preco;
+  transform: rotate(90deg) translateY(-100px);
+}

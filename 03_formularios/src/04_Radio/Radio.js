@@ -9,7 +9,7 @@ import React from 'react';
   Defina um estado para cada grupo.
 */
 
-const DRadio = () => {
+const Radio = () => {
   const [radio, setRadio] = React.useState('');
 
   function handleChange({ target }) {
@@ -99,4 +99,4 @@ const DRadio = () => {
   );
 };
 
-export default DRadio;
+export default Radio;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './Form_Componentes/Input';
+import Input from '../Form_Componentes/Input';
 
 /*
   [onBlur]
@@ -7,7 +7,7 @@ import Input from './Form_Componentes/Input';
 
 */
 
-const GValidacao = () => {
+const Validacao = () => {
   const [cep, setCep] = React.useState('');
   const [error, setError] = React.useState(null);
 
@@ -50,4 +50,4 @@ const GValidacao = () => {
   );
 };
 
-export default GValidacao;
+export default Validacao;

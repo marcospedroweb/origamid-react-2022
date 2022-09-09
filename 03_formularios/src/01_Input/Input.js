@@ -11,7 +11,7 @@ import React from 'react';
     Podemos definir um estado para cada campo.
 */
 
-const AInput = () => {
+const Input = () => {
   // [Reatividade]
   const [nome, setNome] = React.useState('');
 
@@ -365,4 +365,4 @@ const AInput = () => {
   );
 };
 
-export default AInput;
+export default Input;

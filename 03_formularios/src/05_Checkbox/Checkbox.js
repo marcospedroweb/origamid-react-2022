@@ -8,7 +8,7 @@ import React from 'react';
     Podemos definir um estado para cada item ou uma array que irá conter todos os itens selecionados.
 */
 
-const ECheckbox = () => {
+const Checkbox = () => {
   // [Checkbox]
   const [checkbox, setCheckbox] = React.useState(false);
 
@@ -136,4 +136,4 @@ const ECheckbox = () => {
   );
 };
 
-export default ECheckbox;
+export default Checkbox;

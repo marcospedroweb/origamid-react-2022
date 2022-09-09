@@ -6,7 +6,7 @@ import React from 'react';
 
 */
 
-const CSelect = () => {
+const Select = () => {
   const [select, setSelect] = React.useState('');
 
   return (
@@ -24,4 +24,4 @@ const CSelect = () => {
   );
 };
 
-export default CSelect;
+export default Select;
