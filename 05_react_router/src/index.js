@@ -6,6 +6,8 @@ import Link from './02_Link/Link';
 import UseParams from './03_UseParams/UseParams';
 import NestedRoutes from './04_Nested_Routes/NestedRoutes';
 import Head from './05_Head/Head';
+import App from './06_Desafio/App';
+import AppProf from './07_Desafio_Professor/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +16,8 @@ root.render(
     {/* <Link /> */}
     {/* <UseParams /> */}
     {/* <NestedRoutes /> */}
-    <Head />
+    {/* <Head /> */}
+    {/* <App /> */}
+    <AppProf />
   </React.StrictMode>,
 );

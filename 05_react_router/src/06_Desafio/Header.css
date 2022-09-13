@@ -1,0 +1,7 @@
+.nav{
+  margin-bottom: 24px;
+}
+
+.nav a + a {
+  margin-left: 8px;
+}
