@@ -1,41 +1,62 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
 import { ReactComponent as MinhasFotos } from '../../Assets/feed.svg';
 import { ReactComponent as Estatisticas } from '../../Assets/estatisticas.svg';
 import { ReactComponent as AdicionarFoto } from '../../Assets/adicionar.svg';
 import { ReactComponent as Sair } from '../../Assets/sair.svg';
 import styles from './UserHeaderNav.module.css';
+import useMedia from '../../Hooks/useMedia';
 
 const UserHeaderNav = () => {
-  // Variavel para verificar se a tela é mobile ou não
-  const [mobile, setMobile] = React.useState(null);
   const { userLogout } = React.useContext(UserContext);
 
+  /* Verifica se é mobile */
+  const mobile = useMedia('(max-width: 40rem)');
+  const [mobileMenu, setMobileMenu] = React.useState(false);
+
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    setMobileMenu(false);
+  }, [pathname]);
+
   return (
-    <nav className={styles.nav}>
-      {/* Esse "end" é um metodo do react que adiciona a class "active" no elemento que você clicou*/}
-      <NavLink to="/conta" end>
-        {/* Esse "oomponente" é um svg  */}
-        <MinhasFotos />
-        {mobile && 'Minhas Fotos'}
-      </NavLink>
-      <NavLink to="/conta/estatisticas">
-        {/* Esse "oomponente" é um svg  */}
-        <Estatisticas />
-        {mobile && 'Estatísticas'}
-      </NavLink>
-      <NavLink to="/conta/postar">
-        {/* Esse "oomponente" é um svg  */}
-        <AdicionarFoto />
-        {mobile && 'Adicionar Foto'}
-      </NavLink>
-      <button onClick={userLogout}>
-        {/* Esse "oomponente" é um svg  */}
-        <Sair />
-        {mobile && 'Sair'}
-      </button>
-    </nav>
+    <>
+      {/* Verifica se é mobile */}
+      {mobile && (
+        <button
+          aria-label="Menu"
+          className={`${styles.mobileButton} ${
+            mobileMenu && styles.mobileButtonActive
+          }`}
+          onClick={() => setMobileMenu(!mobileMenu)}
+        ></button>
+      )}
+
+      <nav
+        className={`${mobile ? styles.navMobile : styles.nav} ${
+          mobileMenu && styles.navMobileActive
+        }`}
+      >
+        <NavLink to="/conta" end>
+          <MinhasFotos />
+          {mobile && 'Minhas Fotos'}
+        </NavLink>
+        <NavLink to="/conta/estatisticas">
+          <Estatisticas />
+          {mobile && 'Estatísticas'}
+        </NavLink>
+        <NavLink to="/conta/postar">
+          <AdicionarFoto />
+          {mobile && 'Adicionar Foto'}
+        </NavLink>
+        <button onClick={userLogout}>
+          <Sair />
+          {mobile && 'Sair'}
+        </button>
+      </nav>
+    </>
   );
 };
 
